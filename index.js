@@ -1,14 +1,12 @@
-const http = require('http');
+const express = require("express");
+const app = express();
 
-// Cria um servidor básico
-const server = http.createServer((req, res) => {
-  res.statusCode = 200;
-  res.setHeader('Content-Type', 'text/plain');
-  res.end('Servidor funcionando!');
+app.get("/", (req, res) => { 
+    res.send("Hello World!"); // Mensagem corrigida para "Hello World!"
 });
 
-// Define a porta e inicia o servidor
-const PORT = 3000;
-server.listen(PORT, () => {
-  console.log(`Servidor rodando em http://localhost:${PORT}`);
+app.listen(3005, () => {
+    console.log("Servidor rodando na porta 3005"); // Mensagem de log mais descritiva
 });
+
+//qualquercoisai
